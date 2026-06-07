@@ -143,6 +143,11 @@ h1{font-size:31px;line-height:1.2;font-weight:800;margin:16px 0 14px;letter-spac
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 h2{font-size:23px;font-weight:800;margin:36px 0 12px;letter-spacing:-.4px}
 h3{font-size:19px;font-weight:700;margin:0}
+/* Badge niveau de titre (H1/H2/H3) — repère hiérarchie pour le brief */
+.hlvl{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;color:#fff;border-radius:5px;padding:2px 6px;margin-right:8px;vertical-align:middle;font-family:var(--font);background:#9aa4b2;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:#fff}
+.hlvl.l1{background:#2A86E5}
+.hlvl.l2{background:#0dd0ba}
+.hlvl.l3{background:#E1541B}
 
 /* ---- Visuel principal (image hero) ---- */
 .hero-media{position:relative;border-radius:18px 18px 0 0;overflow:hidden;border:1px solid var(--line);margin:14px 0 0}
@@ -241,7 +246,7 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:30px 0}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:14px 0}
 .why-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
 .why-card .wc-ic{width:42px;height:42px;border-radius:11px;background:var(--green-pro);color:var(--green-pro-text);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px}
-.why-card h4{font-size:15.5px;margin-bottom:6px}
+.why-card .wc-h{font-size:15.5px;margin:0 0 6px}
 .why-card p{font-size:13.5px;color:#5a6678;margin:0}
 
 /* ---- Tableaux ---- */
@@ -302,9 +307,9 @@ tr.hidden-row{display:none}
 .proscons .pc{border-radius:12px;padding:14px}
 .proscons .pros{background:var(--green-pro);border:1px solid #bfe6d3}
 .proscons .cons{background:var(--red-con);border:1px solid #f6cdcf}
-.proscons h4{font-size:14px;margin-bottom:8px}
-.proscons .pros h4{color:var(--green-pro-text)}
-.proscons .cons h4{color:var(--red-con-text)}
+.proscons .pc-h{font-size:14px;font-weight:800;margin:0 0 8px}
+.proscons .pros .pc-h{color:var(--green-pro-text)}
+.proscons .cons .pc-h{color:var(--red-con-text)}
 .proscons ul{list-style:none;font-size:13.5px}
 .proscons li{padding:3px 0 3px 22px;position:relative}
 .proscons .pros li:before{content:"✓";color:var(--green-pro-text);position:absolute;left:2px;font-weight:800}
@@ -364,12 +369,9 @@ tr.hidden-row{display:none}
 .related-card .rc-title{font-weight:700;font-size:14.5px;line-height:1.35;color:var(--accent2)}
 .related-card .rc-date{font-size:12px;color:var(--muted);margin-top:10px}
 
-/* ---- FAQ ---- */
-.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:8px 0}
-.faq summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none;font-size:15.5px;display:flex;justify-content:space-between;align-items:center}
-.faq summary:after{content:"+";color:var(--accent2);font-size:22px;font-weight:700}
-.faq details[open] summary:after{content:"–"}
-.faq .ans{padding:0 16px 14px;color:#444;font-size:14.5px}
+/* ---- FAQ (questions en H3) ---- */
+.faq .faq-q{font-size:16.5px;font-weight:800;margin:18px 0 4px;color:var(--ink)}
+.faq p{margin:0 0 6px;color:#444;font-size:14.5px}
 
 /* ---- Commentaires + réactions emoji ---- */
 .comments{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:26px 0}
@@ -419,7 +421,18 @@ footer.site .logo span{color:var(--orange)}
   <!-- ============================================================ -->
   <!-- H1 + visuel principal + bloc auteur SIMPLE (après le H1)    -->
   <!-- ============================================================ -->
-  <h1>Meilleur RPG mobile : TOP 14 des jeux sur iOS &amp; Android (Juin 2026)</h1>
+  <div class="brief struct"><span class="tag">Brief — Consignes éditoriales générales</span>
+    <b>Reprendre au maximum l'existant</b> (textes, structure, visuels de la page actuelle) quand la qualité est suffisante — pas besoin de tout réécrire ; n'améliorer que ce qui en a besoin.<br>
+    <b>Mot-clé principal :</b> « meilleur RPG mobile » (+ variantes : RPG mobile Android/iOS, jeux de rôle smartphone, meilleur RPG mobile gratuit).<br>
+    <b>Langue :</b> FR. <b>Ton :</b> expert, de gamer à gamer, direct et factuel — 1 phrase = 1 info utile, zéro remplissage.<br>
+    <b>Règles transversales :</b> données chiffrées et vérifiées · liens internes naturels · cohérence des notes/chiffres entre les fiches, le classement et le comparatif. Chaque section précise ci-dessous son <b>nombre de mots</b> et son <b>format</b>.<br>
+    <b>Note :</b> les textes affichés dans cette maquette ne sont que des <b>exemples</b> ; le client peut les remplacer — respecter les volumes et formats indiqués.
+  </div>
+
+  <h1><span class="hlvl l1">H1</span>Meilleur RPG mobile : TOP 14 des jeux sur iOS &amp; Android (Juin 2026)</h1>
+  <div class="brief"><span class="tag">Brief — H1</span> <b>Longueur :</b> 50 à 70 caractères. 1 seul H1, contenant le mot-clé principal + le nombre (14) + l'année/mois.</div>
+
+  <div class="brief ui"><span class="tag">UI / Brief — Image hero</span> Visuel principal en haut d'article (.webp). <b>Texte ALT obligatoire</b> avec mot-clé (ex. « Top des meilleurs RPG mobile sur Android et iOS »).</div>
 
   <!-- Visuel principal (image hero) + bloc auteur collé sous l'image -->
   <div class="hero-media">
@@ -460,7 +473,9 @@ footer.site .logo span{color:var(--orange)}
       </div>
     </div>
   </div>
-  <div class="brief"><span class="tag">Brief — Bloc auteur (haut)</span> Bloc <b>« Écrit et testé par »</b> compact : nom cliquable + « i » (bio auteur, <b>même chiffre que l'intro</b>) + <b>réseaux du rédacteur</b> collés au nom (gauche), et <b>« Partager sur : » + réseaux du site à droite</b>. Pas de « Édité par » / « Fact-checké par ».</div>
+  <div class="brief"><span class="tag">Brief — Bloc auteur (haut)</span>
+    <b>Format :</b> bloc compact (pas de texte rédactionnel). <b>Éléments :</b> avatar + label « Écrit et testé par » + nom de l'auteur cliquable (lien vers sa page auteur) + icône « i » (tooltip : 1 phrase de bio reprenant <b>le même chiffre que l'intro</b>, ex. heures de test) + réseaux du rédacteur collés au nom (gauche) + « Partager sur : » + réseaux du site (droite) + date de mise à jour.
+  </div>
 
   <!-- INTRODUCTION directe (50-70 mots) -->
   <p class="intro">
@@ -469,7 +484,13 @@ footer.site .logo span{color:var(--orange)}
     tactile audité et régularité des mises à jour : <b>nous vous présentons notre top 14 des meilleurs
     RPG mobile en juin 2026</b>.
   </p>
-  <div class="brief"><span class="tag">Brief — Introduction</span> Volume : <b>50 à 70 mots maximum</b>. Uniquement des chiffres et la méthodologie de test (ex. « 58 RPG testés en 640 h, 60 FPS iOS/Android, équilibrage éco vérifié, gameplay tactile audité »). <b>Terminer par : « … nous vous présentons notre top 14 des meilleurs RPG mobile en juin 2026 »</b>.</div>
+  <div class="brief"><span class="tag">Brief — Introduction</span>
+    <b>Format :</b> 1 seul paragraphe (pas de liste). <b>Longueur :</b> 50 à 70 mots maximum.<br>
+    <b>Contenu :</b> uniquement des chiffres et la méthodologie de test (nombre de jeux testés, heures cumulées, FPS visé iOS/Android, critères audités : équilibrage éco, gameplay tactile, régularité des MAJ).<br>
+    <b>Ton :</b> direct, factuel, de gamer à gamer — pas de phrase d'accroche creuse.<br>
+    <b>Obligatoire :</b> terminer par « … nous vous présentons notre top 14 des meilleurs RPG mobile en juin 2026 ».<br>
+    <b>SEO :</b> placer le mot-clé principal « meilleur RPG mobile » dans les 70 premiers mots.
+  </div>
 
   <!-- CTA JEU N°1 (avant le sommaire) — bloc jeu sans les avantages -->
   <div class="cta-game">
@@ -486,7 +507,10 @@ footer.site .logo span{color:var(--orange)}
       <a href="https://genshin.hoyoverse.com/fr/" target="_blank" rel="nofollow">🖥 PC</a>
     </div>
   </div>
-  <div class="brief"><span class="tag">Brief — CTA jeu N°1</span> Mettre en avant le jeu classé N°1 (nom + liens stores) <b>avant le sommaire</b>, sans la liste d'avantages. Sert de raccourci direct vers le téléchargement.</div>
+  <div class="brief"><span class="tag">Brief — CTA jeu N°1</span>
+    <b>Format :</b> bloc bouton (0 mot rédactionnel hors nom + accroche courte ≤ 8 mots). <b>Position :</b> avant le sommaire.<br>
+    <b>Éléments :</b> badge « N°1 » + nom du jeu N°1 + 1 ligne d'accroche (ex. « Notre meilleur RPG mobile en juin 2026 ») + 3 liens stores (Google Play / App Store / PC). <b>Sans</b> liste d'avantages. Sert de raccourci direct vers le téléchargement.
+  </div>
 
   <!-- ============================================================ -->
   <!-- SOMMAIRE (TOC) — bouton pill comme la page actuelle         -->
@@ -501,7 +525,7 @@ footer.site .logo span{color:var(--orange)}
       </li>
       <li><a href="#comparatif">Tableau comparatif des meilleurs RPG mobiles</a></li>
       <li><a href="#pourquoi">Pourquoi jouer au RPG sur mobile en 2026 ?</a></li>
-      <li><a href="#guide">Comment choisir son RPG sur smartphone ? Le guide d'achat</a></li>
+      <li><a href="#guide">Comment choisir son RPG sur smartphone ?</a></li>
       <li><a href="#methodo">Comment réalisons-nous notre classement ?</a></li>
       <li><a href="#faq">Foire aux Questions (FAQ)</a></li>
     </ol>
@@ -535,7 +559,7 @@ footer.site .logo span{color:var(--orange)}
   <!-- ============================================================ -->
   <!-- TABLEAU DE CLASSEMENT GLOBAL (synthèse + filtres)           -->
   <!-- ============================================================ -->
-  <h2 id="classement">Classement des 14 meilleurs RPG mobiles iOS &amp; Android en juin 2026</h2>
+  <h2 id="classement"><span class="hlvl l2">H2</span>Classement des 14 meilleurs RPG mobiles iOS &amp; Android en juin 2026</h2>
 
   <div class="filters">
     <button class="active">Tout afficher</button>
@@ -571,34 +595,41 @@ footer.site .logo span{color:var(--orange)}
   </table>
   <button class="show-more" id="showMoreBtn">▾ Afficher les 14 jeux du classement</button>
 
-  <div class="brief ui"><span class="tag">UI Note</span> Afficher uniquement les <b>5 premières lignes</b> au démarrage, puis bouton dynamique <b>« Afficher plus de jeux »</b> pour dérouler le reste. Filtres : Rang / Jeu / Genre-Typo / Note Store / Modèle / Lien rapide, <b>+ filtres par genre</b> (Action-RPG, Tour par tour, Gacha, MMORPG…).</div>
+  <div class="brief ui"><span class="tag">UI Note — Tableau de classement</span>
+    <b>Format :</b> tableau (0 mot rédactionnel avant). <b>Lignes :</b> 14 jeux. <b>Colonnes :</b> Rang / Jeu / Genre-Typo / Note Store / Modèle / Jouer (3 liens Android · iOS · PC cliquables).<br>
+    <b>Comportement :</b> afficher uniquement les <b>5 premières lignes</b> au démarrage, puis bouton dynamique « Afficher plus de jeux » pour dérouler les 9 restantes.<br>
+    <b>Filtres :</b> Tout afficher + filtres par genre (Action-RPG, Tour par tour, Gacha / Hero Collector, MMORPG) + Free-to-Play + Jeux testés + Aussi sur PC.
+  </div>
 
   <hr class="sep">
 
   <!-- ============================================================ -->
   <!-- LES 14 JEUX EN DÉTAIL                                        -->
   <!-- ============================================================ -->
-  <h2 id="detail">Les 14 meilleurs RPG mobile iOS et Android du moment en détail</h2>
-  <div class="brief"><span class="tag">Brief — H2 & mots-clés</span> Intégrer un <b>mot-clé pertinent dans chaque H2</b> quand c'est naturel (ex. « meilleur RPG mobile gratuit », « RPG mobile Android/iOS », « jeu de rôle smartphone »), sans sur-optimiser. Les H3 des fiches portent la spécificité de chaque jeu (voir ci-dessous).</div>
+  <h2 id="detail"><span class="hlvl l2">H2</span>Les 14 meilleurs RPG mobile iOS et Android du moment en détail</h2>
+  <div class="brief"><span class="tag">Brief — H2 & mots-clés (transversal)</span>
+    <b>Règle générale :</b> intégrer un mot-clé pertinent dans chaque H2 quand c'est naturel (ex. « meilleur RPG mobile gratuit », « RPG mobile Android et iOS », « jeu de rôle sur smartphone »), <b>sans sur-optimiser ni bourrer</b>.<br>
+    <b>H3 des fiches :</b> orientés spécificité de chaque jeu (mot-clé secondaire), <b>sans répéter « le meilleur RPG mobile »</b> à chaque fois (anti-spam). Voir exemples ci-dessous.
+  </div>
 
   <div class="brief struct">
     <span class="tag">Brief — Mise en page stricte des fiches jeux</span>
-    Pour <b>CHAQUE jeu (14)</b>, respecter l'ordre exact ci-dessous :
-    <b>1)</b> Titre H3 <b>orienté mot-clé / spécificité du jeu</b> — <b>ne pas répéter « le meilleur RPG mobile » à chaque fiche</b> (effet spam). Le N°1 peut l'affirmer (« Le meilleur RPG mobile pour l'exploration »), les suivants doivent varier : « [Nom] : le N°1 pour le tour par tour », « [Nom] : l'action-RPG le plus généreux en F2P », « [Nom] : le RPG mobile idéal pour jouer en coop », etc. •
-    <b>2)</b> Bloc jeu dégradé : 3 avantages majeurs + boutons stores (Google Play / App Store / PC) •
-    <b>3)</b> Description rédaction (80-200 mots, phrases courtes et factuelles : boucle de gameplay, univers graphique, progression) <b>incluant un lien vers la fiche du jeu sur mobi.gg</b> •
-    <b>4)</b> Tableau caractéristiques techniques •
-    <b>5)</b> Tableau Avantages / Inconvénients (3 à 5 chacun, factuels/chiffrés) •
-    <b>6)</b> Encart « Avis complet » •
-    <b>7)</b> <b>Note des experts en fin de bloc</b> (jauge « Note de Mobi.gg »).
-    <br>Le bloc ci-dessous est le <b>gabarit type</b> à dupliquer 14 fois (ancres #jeu-2 → #jeu-14).
+    Pour <b>CHAQUE jeu (14)</b>, respecter l'ordre et les formats exacts ci-dessous :<br>
+    <b>1) Titre H3</b> (≤ 12 mots) orienté mot-clé / spécificité du jeu — ne pas répéter « le meilleur RPG mobile » à chaque fiche (anti-spam). Le N°1 peut l'affirmer ; les autres varient (voir exemples plus bas).<br>
+    <b>2) Bloc jeu</b> (composant) : 3 avantages majeurs (3 puces ≤ 8 mots) + 3 boutons stores (Google Play / App Store / PC). C'est le CTA. <b>Reprendre l'existant si déjà bien.</b><br>
+    <b>3) Description</b> : 80 à 200 mots, 3-5 paragraphes courts et aérés, factuel, + 1 lien interne vers la fiche du jeu + 1 visuel (image/vidéo).<br>
+    <b>4) Tableau technique</b> : 10 lignes (voir brief dédié), 0 mot rédactionnel.<br>
+    <b>5) Avantages / Inconvénients</b> : 2 colonnes, 3 à 5 puces chacune, factuelles/chiffrées.<br>
+    <b>6) Encart « Avis complet »</b> : 1 phrase + lien interne vers le test du jeu.<br>
+    <b>7) Note des experts</b> : jauge « Note de Mobi.gg » en fin de bloc (note /5).<br>
+    Le bloc ci-dessous est le <b>gabarit type</b> à dupliquer 14 fois (ancres #jeu-2 → #jeu-14).
   </div>
 
   <!-- ============ FICHE JEU #1 — BLOC COMPLET (gabarit) ============ -->
   <div class="game-block">
     <div class="rank-h">
       <div class="num">#1</div>
-      <h3 id="jeu-1">Genshin Impact : Le meilleur RPG mobile pour <span class="kw">l'exploration en monde ouvert</span></h3>
+      <h3 id="jeu-1"><span class="hlvl l3">H3</span>Genshin Impact : Le meilleur RPG mobile pour <span class="kw">l'exploration en monde ouvert</span></h3>
     </div>
 
     <div class="game-card">
@@ -635,9 +666,16 @@ footer.site .logo span{color:var(--orange)}
     <p class="desc-redac">
       La progression repose sur la montée de niveau, l'amélioration d'artefacts et les invocations gacha pour débloquer de nouveaux personnages et armes. Une nouvelle région est ajoutée environ chaque année, avec doublage intégral.
     </p>
-    <div class="brief"><span class="tag">Brief — Description</span> <b>80 à 200 mots</b> selon le jeu. <b>Phrases courtes et aérées</b> (pas de gros pavé), <b>uniquement du factuel</b> qui explique le jeu : studio, année, boucle de gameplay, type de combat, univers graphique, système de progression, rythme des mises à jour. <b>Inclure un lien vers la fiche du jeu</b>. Visuel (image/vidéo) avant ou après. Pas de CTA (les CTA sont les boutons stores).</div>
+    <div class="brief"><span class="tag">Brief — Description du jeu</span>
+      <b>Format :</b> 3 à 5 paragraphes courts et aérés (1 idée = 1 phrase courte, <b>pas de gros pavé</b>). <b>Longueur :</b> 80 à 200 mots selon la richesse du jeu.<br>
+      <b>Contenu (factuel uniquement) :</b> studio + année · boucle de gameplay principale · type de combat · univers / direction artistique · système de progression · rythme des mises à jour.<br>
+      <b>Obligatoire :</b> 1 lien interne vers la fiche du jeu sur mobi.gg dès la 1re mention du nom. <b>Visuel</b> (image ou vidéo gameplay) placé avant ou après le texte.
+    </div>
 
     <table>
+      <thead>
+        <tr><th>Caractéristique</th><th>Détail</th></tr>
+      </thead>
       <tbody>
         <tr><th>Genre / Typo</th><td>Action-RPG / Open-World</td></tr>
         <tr><th>Date de sortie</th><td>2020</td></tr>
@@ -651,10 +689,15 @@ footer.site .logo span{color:var(--orange)}
         <tr><th>Note des Stores</th><td class="note-star">4.8/5 (moyenne Android/iOS)</td></tr>
       </tbody>
     </table>
+    <div class="brief"><span class="tag">Brief — Tableau technique</span>
+      <b>Format :</b> tableau (2 colonnes : critère / valeur). <b>0 mot rédactionnel.</b> Toutes les lignes obligatoires et renseignées :<br>
+      Genre / Typo · Date de sortie · Plateforme · Studio / Éditeur · Type de combat · Modèle économique · <b>Nombre de téléchargements</b> · Difficulté · Recommandé pour · Note des Stores (sur 5).<br>
+      <b>Source :</b> données vérifiées (fiche store officielle) au moment de la mise à jour de l'article.
+    </div>
 
     <div class="proscons">
       <div class="pc pros">
-        <h4>🟢 Ce qu'on aime</h4>
+        <p class="pc-h">🟢 Ce qu'on aime</p>
         <ul>
           <li>Monde ouvert de plus de 7 régions explorables</li>
           <li>Plus de 120 personnages jouables</li>
@@ -663,7 +706,7 @@ footer.site .logo span{color:var(--orange)}
         </ul>
       </div>
       <div class="pc cons">
-        <h4>🔴 Ce qu'on aime moins</h4>
+        <p class="pc-h">🔴 Ce qu'on aime moins</p>
         <ul>
           <li>Taux d'invocation 5★ à 0,6 % (gacha)</li>
           <li>Téléchargement de plus de 30 Go</li>
@@ -671,7 +714,10 @@ footer.site .logo span{color:var(--orange)}
         </ul>
       </div>
     </div>
-    <div class="brief"><span class="tag">Brief — Avantages / Inconvénients</span> <b>3 à 5 avantages</b> et <b>3 à 5 inconvénients</b>, <b>uniquement factuels et chiffrés</b> quand c'est possible (nombre de joueurs / téléchargements, taux de drop gacha, poids du jeu en Go, nombre de personnages, fréquence des MAJ…). Éviter les formules vagues type « c'est joli ».</div>
+    <div class="brief"><span class="tag">Brief — Avantages / Inconvénients</span>
+      <b>Format :</b> 2 colonnes, listes à puces. <b>Quantité :</b> 3 à 5 avantages et 3 à 5 inconvénients (équilibrer le nombre).<br>
+      <b>Style :</b> 1 puce = 1 info factuelle et chiffrée quand c'est possible (nombre de joueurs / téléchargements, taux de drop gacha, poids en Go, nombre de personnages, fréquence des MAJ, prix). Chaque puce ≤ 1 ligne. Les intitulés « Ce qu'on aime / moins » sont de simples <b>paragraphes</b>, pas des titres Hn.
+    </div>
 
     <!-- Encart avis complet + NOTE DES EXPERTS (jauge à droite) -->
     <div class="review-tip">
@@ -682,7 +728,10 @@ footer.site .logo span{color:var(--orange)}
       </div>
     </div>
   </div>
-  <div class="brief"><span class="tag">Brief — Note des experts</span> <b>Note de l'avis / des experts Mobi.gg</b> affichée en jauge circulaire « Note de Mobi.gg », <b>à droite de l'encart « Vous hésitez encore »</b>, en fin de bloc. Distincte de la note des stores du tableau technique.</div>
+  <div class="brief"><span class="tag">Brief — Note des experts + encart avis</span>
+    <b>Format :</b> encart 1 ligne (texte « Vous hésitez encore ? … avis complet » avec lien interne vers le test du jeu) + jauge circulaire « Note de Mobi.gg » à droite, sur la même ligne, en fin de bloc.<br>
+    <b>Note :</b> note de la rédaction sur 5 (1 décimale), <b>distincte</b> de la note des stores du tableau technique. Renseigner la valeur réelle attribuée par l'équipe.
+  </div>
 
   <div class="brief struct" style="margin-top:18px">
     <span class="tag">Brief — Répéter ce bloc ×13 (titres variés)</span>
@@ -708,7 +757,7 @@ footer.site .logo span{color:var(--orange)}
   <!-- ============================================================ -->
   <!-- TABLEAU COMPARATIF GLOBAL — 14 lignes, note des STORES      -->
   <!-- ============================================================ -->
-  <h2 id="comparatif">Tableau comparatif des meilleurs RPG mobiles</h2>
+  <h2 id="comparatif"><span class="hlvl l2">H2</span>Tableau comparatif des meilleurs RPG mobiles</h2>
 
   <table>
     <thead>
@@ -731,13 +780,14 @@ footer.site .logo span{color:var(--orange)}
       <tr><td>Star Wars: Galaxy of Heroes</td><td>Hero Collector</td><td>Tour par tour</td><td>iOS · Android</td><td><span class="badge free">Gratuit</span></td><td class="note-star">4.2/5</td></tr>
     </tbody>
   </table>
+  <div class="brief"><span class="tag">Brief — Tableau comparatif</span>
+    <b>Format :</b> tableau récapitulatif unique. <b>0 mot rédactionnel</b> avant ni après. <b>Lignes :</b> les 14 jeux (mêmes que le classement, même ordre).<br>
+    <b>Colonnes (exemple) :</b> Nom · Genre · Combat · Plateforme · Modèle · Note des Stores (sur 5). <b>Les colonnes peuvent être modifiées / adaptées</b> selon vous, la page et le sujet (ajouter/retirer une colonne pertinente).<br>
+    <b>Cohérence :</b> reprendre exactement les mêmes valeurs que les fiches individuelles.
+  </div>
 
   <hr class="sep">
-
-  <!-- ============================================================ -->
-  <!-- POURQUOI JOUER AU RPG SUR MOBILE EN 2026 ?                   -->
-  <!-- ============================================================ -->
-  <h2 id="pourquoi">Pourquoi jouer au RPG sur mobile en 2026 ?</h2>
+  <h2 id="pourquoi"><span class="hlvl l2">H2</span>Pourquoi jouer au RPG sur mobile en 2026 ?</h2>
   <p>En 2026, le smartphone est devenu une plateforme RPG à part entière. La frontière entre RPG console et mobile
   n'a jamais été aussi fine : puissance graphique, sauvegardes partagées et qualité de production se sont alignées
   sur les standards du PC. Voici les trois raisons concrètes qui font du mobile un excellent choix aujourd'hui.</p>
@@ -745,30 +795,34 @@ footer.site .logo span{color:var(--orange)}
   <div class="why-grid">
     <div class="why-card">
       <div class="wc-ic">⚡</div>
-      <h4>Une puissance de console</h4>
+      <h3 class="wc-h"><span class="hlvl l3">H3</span>Une puissance de console</h3>
       <p>Les puces Apple Silicon (A18/A19) et les Snapdragon de pointe font tourner les mondes ouverts en 60 FPS, sans concession graphique majeure.</p>
     </div>
     <div class="why-card">
       <div class="wc-ic">☁️</div>
-      <h4>Le cross-save partout</h4>
+      <h3 class="wc-h"><span class="hlvl l3">H3</span>Le cross-save partout</h3>
       <p>Le cross-save PC / Console / Mobile s'est imposé comme la norme : on commence sur sa TV, on continue dans les transports, sur la même sauvegarde.</p>
     </div>
     <div class="why-card">
       <div class="wc-ic">🎮</div>
-      <h4>Des productions AAA</h4>
+      <h3 class="wc-h"><span class="hlvl l3">H3</span>Des productions AAA</h3>
       <p>Cinématiques, doublage intégral, rythme de mises à jour calqué sur le PC : les éditeurs traitent désormais le mobile comme leur vitrine principale.</p>
     </div>
   </div>
-  <div class="brief"><span class="tag">Brief</span> Paragraphe factuel de <b>150 mots</b> sur l'évolution technique (Apple Silicon, Snapdragon), le cross-save devenu la norme et la qualité des productions. Format : <b>texte + liste OU texte + bloc de cartes carrées</b> (ci-dessus). Choisir l'un des deux.</div>
+  <div class="brief"><span class="tag">Brief — Pourquoi jouer en 2026</span>
+    <b>Format :</b> 1 paragraphe d'intro (40-60 mots) <b>+</b> AU CHOIX : une liste à puces (3-4 points) OU un bloc de 3 cartes carrées (titre H3 court + 1 phrase chacune). Choisir un seul des deux formats.<br>
+    <b>Longueur totale :</b> ~150 mots. <b>Angles à couvrir :</b> évolution technique (puces Apple Silicon, Snapdragon, 60 FPS) · cross-save PC/Console/Mobile devenu la norme · qualité des productions (cinématiques, doublage, MAJ).<br>
+    <b>Ton :</b> factuel, sans superlatif gratuit.
+  </div>
 
   <hr class="sep">
 
   <!-- ============================================================ -->
   <!-- GUIDE D'ACHAT                                                -->
   <!-- ============================================================ -->
-  <h2 id="guide">Comment choisir son RPG sur smartphone ? Le guide d'achat</h2>
+  <h2 id="guide"><span class="hlvl l2">H2</span>Comment choisir son RPG sur smartphone ?</h2>
 
-  <h3 style="margin-top:24px">Le style de jeu et la typologie</h3>
+  <h3 style="margin-top:24px"><span class="hlvl l3">H3</span>Le style de jeu et la typologie</h3>
   <p>Le premier réflexe est d'identifier la typologie qui correspond à votre façon de jouer : réflexes et combos
   pour l'action, réflexion pour le tour par tour, placement pour le tactique, ou farm pour le hack'n slash. Le
   tableau ci-dessous résume chaque style et désigne le meilleur jeu de notre liste pour chacun.</p>
@@ -789,24 +843,34 @@ footer.site .logo span{color:var(--orange)}
       <tr><td><b><a href="https://mobi.gg/fr/genre-jeux-mobile/dungeon-crawler/">Dungeon Crawler</a></b></td><td>Exploration de labyrinthes et de donjons fermés par étapes.</td><td>Diablo Immortal</td></tr>
     </tbody>
   </table>
-  <div class="brief"><span class="tag">Brief — Maillage interne</span> <b>Mettre un lien sur chaque typologie</b> (vers les pages de genre / tops correspondantes de mobi.gg) — déjà appliqué dans le tableau ci-dessus (ex. <a href="https://mobi.gg/fr/tops/top-meilleurs-mmorpg-mobile/">top MMORPG mobile</a>).</div>
+  <div class="brief"><span class="tag">Brief — Le style de jeu et la typologie</span>
+    <b>Format :</b> 1 paragraphe d'intro (~50 mots) <b>+</b> tableau des typologies (3 colonnes : Typologie / Description du gameplay / Meilleur jeu de la liste). 9 lignes minimum.<br>
+    <b>Maillage interne :</b> mettre un lien sur <b>chaque typologie</b> (vers la page de genre / top correspondante de mobi.gg, ex. <a href="https://mobi.gg/fr/tops/top-meilleurs-mmorpg-mobile/">top MMORPG mobile</a>) — pas dans les descriptions.<br>
+    <b>Cohérence :</b> le « meilleur jeu » désigné par typologie doit faire partie du top 14.
+  </div>
 
-  <h3 style="margin-top:24px">Le modèle économique : Free-to-Play vs Pay-to-Win</h3>
+  <h3 style="margin-top:24px"><span class="hlvl l3">H3</span>Le modèle économique : Free-to-Play vs Pay-to-Win</h3>
   <p>Quasiment tous les RPG mobiles majeurs sont free-to-play. La vraie question est de savoir si la boutique se
   contente d'accélérer la progression (F2P sain) ou si elle conditionne l'accès au contenu de fin de jeu
   (pay-to-win). Bonne nouvelle : sur notre sélection, <b>l'intégralité de l'histoire principale reste accessible
   gratuitement</b>. Les paywalls se concentrent sur le end-game compétitif (PvP classé, donjons d'élite), que
   nous signalons systématiquement dans chaque fiche.</p>
-  <div class="brief"><span class="tag">Brief</span> <b>80 mots</b> factuels : viabilité réelle des gachas, accès gratuit à l'histoire principale, détection des paywalls.</div>
+  <div class="brief"><span class="tag">Brief — Modèle économique (F2P vs P2W)</span>
+    <b>Format :</b> 1 paragraphe (pas de liste). <b>Longueur :</b> ~80 mots, factuel.<br>
+    <b>À couvrir :</b> viabilité réelle des gachas · accès gratuit (ou non) à l'intégralité de l'histoire principale · localisation des barrières de paiement (paywalls : end-game, PvP classé, énergie…). Donner des repères concrets si possible.
+  </div>
 
-  <h3 style="margin-top:24px">L'espace de stockage et la configuration requise</h3>
+  <h3 style="margin-top:24px"><span class="hlvl l3">H3</span>L'espace de stockage et la configuration requise</h3>
   <p>Un RPG mobile moderne pèse aujourd'hui de 3 à 35 Go une fois toutes les données téléchargées. Avant
   d'installer, vérifiez l'espace libre et la place pour les futures mises à jour. Ces jeux sollicitent fortement
   le GPU : attendez-vous à une chauffe notable sur de longues sessions et à un impact direct sur l'autonomie.
   Activer la limite à 30 FPS ou les graphismes « moyens » réduit nettement la consommation et la température.</p>
-  <div class="brief"><span class="tag">Brief</span> <b>80 mots</b> factuels : poids des fichiers (3 à 35 Go), chauffe thermique, impact batterie.</div>
+  <div class="brief"><span class="tag">Brief — Stockage & configuration requise</span>
+    <b>Format :</b> 1 paragraphe (pas de liste). <b>Longueur :</b> ~80 mots, factuel et chiffré.<br>
+    <b>À couvrir :</b> poids des fichiers en Go (fourchette 3 à 35 Go) · gestion de la chauffe thermique · impact direct sur l'autonomie de la batterie · conseils concrets (limiter à 30 FPS, graphismes moyens).
+  </div>
 
-  <h3 style="margin-top:24px">Le type de gameplay : Solo, Coop ou PvP</h3>
+  <h3 style="margin-top:24px"><span class="hlvl l3">H3</span>Le type de gameplay : Solo, Coop ou PvP</h3>
   <p>Choisissez selon votre rythme de vie. Pour des sessions courtes et nerveuses, privilégiez le tour par tour et
   les instances rapides (Honkai: Star Rail, Epic Seven). Pour des sessions longues et sociales, orientez-vous vers
   l'exploration en monde ouvert ou les donjons de guilde (Genshin Impact, Albion Online). Le tableau ci-dessous
@@ -822,14 +886,31 @@ footer.site .logo span{color:var(--orange)}
       <tr><td><b>Compétiteur PvP</b></td><td>Arène classée, PvP massif</td><td>Albion Online · Raid: Shadow Legends</td></tr>
     </tbody>
   </table>
-  <div class="brief"><span class="tag">Brief</span> <b>80 mots</b> factuels + ce tableau d'aiguillage (Solo / Coop / PvP) pour orienter le joueur selon son profil.</div>
+  <div class="brief"><span class="tag">Brief — Solo / Coop / PvP</span>
+    <b>Format :</b> 1 paragraphe d'intro (~80 mots) <b>+</b> tableau d'aiguillage (3 colonnes : Profil de joueur / Type de session / Jeux recommandés), 3 lignes.<br>
+    <b>Objectif :</b> orienter le lecteur selon son temps de jeu et son envie (sessions courtes/nerveuses vs longues/sociales vs compétiteur PvP). Citer des jeux du top 14 dans chaque ligne.
+  </div>
+
+  <h3 style="margin-top:24px"><span class="hlvl l3">H3</span>La langue et la traduction française</h3>
+  <p>Un critère souvent négligé : tous les RPG mobiles ne sont pas traduits en français. La plupart des gros titres
+  de ce top (Genshin Impact, Honkai: Star Rail, Diablo Immortal) proposent une localisation FR complète, parfois
+  avec doublage. D'autres restent en anglais ou en coréen. Vérifiez la langue de l'interface et des sous-titres
+  avant de vous lancer, surtout sur les jeux très narratifs où comprendre l'histoire fait partie du plaisir.</p>
+  <div class="brief"><span class="tag">Brief — Langue & traduction française</span>
+    <b>Format :</b> 1 paragraphe (pas de liste). <b>Longueur :</b> 60 à 80 mots, factuel.<br>
+    <b>À couvrir :</b> quels jeux du top sont traduits en FR (interface, sous-titres, doublage), lesquels restent en anglais/coréen.<br>
+    <b>Note :</b> section additionnelle <b>exemple</b> — à conserver, à adapter, ou à transformer en question FAQ si la réponse est courte.
+  </div>
+
+  <h2 style="opacity:.55"><span class="hlvl l2">H2</span>Nos autres H2… (éléments en plus si besoin)</h2>
+  <div class="brief struct"><span class="tag">Brief — Sections additionnelles (H2)</span> Après la section « Comment choisir », vous pouvez <b>ajouter d'autres H2</b> si besoin, en fonction de l'<b>analyse des concurrents</b> et de la difficulté du sujet (ex. « Les meilleurs RPG mobile hors ligne », « RPG mobile vs RPG console », « Les RPG mobile à venir en 2026 »…). Si la réponse à un point peut être <b>courte</b>, la basculer plutôt en <b>question de la FAQ</b> (ci-dessous) au lieu d'en faire une section dédiée.</div>
 
   <hr class="sep">
 
   <!-- ============================================================ -->
   <!-- MÉTHODOLOGIE                                                 -->
   <!-- ============================================================ -->
-  <h2 id="methodo">Comment réalisons-nous notre classement des meilleurs jeux RPG sur mobile ?</h2>
+  <h2 id="methodo"><span class="hlvl l2">H2</span>Comment réalisons-nous notre classement des meilleurs jeux RPG sur mobile ?</h2>
   <p>Chez mobi.gg, aucun jeu n'entre dans un top sans être passé entre les mains de notre équipe. Nous installons
   chaque titre sur plusieurs appareils, jouons sur la durée et confrontons nos retours avant de trancher. Notre
   charte repose sur des critères objectifs et mesurables, pour éviter tout biais de hype ou de préférence
@@ -841,22 +922,44 @@ footer.site .logo span{color:var(--orange)}
     <li>Analyse de l'impact de la boutique payante sur 100 % du contenu de fin de jeu</li>
     <li>Suivi de la stabilité des serveurs dans le temps</li>
   </ul>
-  <div class="brief"><span class="tag">Brief</span> Bloc <b>150 à 200 mots</b> détaillant la charte de test mobi.gg + liste à puces des critères objectifs (ci-dessus).</div>
+  <div class="brief"><span class="tag">Brief — Méthodologie de classement</span>
+    <b>Format :</b> 1 à 2 paragraphes (~150 à 200 mots) <b>+</b> liste à puces des critères objectifs (4 à 6 puces).<br>
+    <b>À couvrir :</b> charte de test mobi.gg, temps de jeu minimum par titre, tests croisés multi-appareils (entrée/milieu/haut de gamme iOS & Android), analyse de l'impact de la boutique sur le end-game, suivi de la stabilité serveurs, fréquence de réévaluation du classement.<br>
+    <b>Ton :</b> transparent, rassurant (E-E-A-T), sans jargon inutile.
+  </div>
 
   <hr class="sep">
 
   <!-- ============================================================ -->
   <!-- FAQ                                                          -->
   <!-- ============================================================ -->
-  <h2 id="faq">Foire aux Questions (FAQ)</h2>
+  <h2 id="faq"><span class="hlvl l2">H2</span>Foire aux Questions (FAQ)</h2>
+  <div class="brief"><span class="tag">Brief — FAQ</span>
+    <b>Format :</b> chaque question en <b>H3</b>, chaque réponse en <b>paragraphe</b> (pas de liste). <b>Longueur :</b> 40 à 55 mots par réponse (réponse directe dès la 1re phrase pour viser les featured snippets).<br>
+    <b>Quantité :</b> 7 questions (reprendre les 7 ci-dessous, reformulables selon « People Also Ask » / analyse concurrents).<br>
+    <b>Ton :</b> ultra-direct, factuel. <b>SEO :</b> intégrer les variantes de mots-clés (gratuit, Android, iOS, manette, le plus joué…). Reporter le tout dans le schéma FAQPage (voir exemple).
+  </div>
   <div class="faq">
-    <details open><summary>Qu'est un RPG sur mobile exactement ?</summary><div class="ans">Un RPG (jeu de rôle) sur mobile est un jeu où vous incarnez un personnage que vous faites progresser au fil de quêtes. Vous montez en niveau, améliorez votre équipement et débloquez des compétences, le tout depuis votre smartphone, en solo ou en ligne.</div></details>
-    <details><summary>Quel est le meilleur RPG mobile gratuit actuel ?</summary><div class="ans">Genshin Impact reste notre référence gratuite en juin 2026 : monde ouvert, histoire complète accessible sans payer et mises à jour régulières. Honkai: Star Rail le talonne pour les amateurs de tour par tour.</div></details>
-    <details><summary>Peut-on jouer aux RPG mobiles avec une manette ?</summary><div class="ans">Oui. La majorité des gros RPG de ce top (Genshin Impact, Honkai: Star Rail, Diablo Immortal) gèrent les manettes Bluetooth, et le cross-save permet souvent de basculer vers la version PC ou console.</div></details>
-    <details><summary>Quel est le RPG mobile le plus joué ?</summary><div class="ans">Pokémon GO et Genshin Impact figurent parmi les RPG mobiles les plus joués au monde, avec des dizaines de millions de joueurs actifs mensuels et des revenus records sur les stores.</div></details>
-    <details><summary>Quel est le meilleur RPG Android ?</summary><div class="ans">Sur Android, Genshin Impact arrive en tête grâce à son optimisation et son monde ouvert. Pour le tour par tour, Honkai: Star Rail est l'alternative la plus aboutie.</div></details>
-    <details><summary>Quel est le meilleur RPG iOS ?</summary><div class="ans">Sur iOS, Genshin Impact profite à plein des puces Apple Silicon pour tourner en 60 FPS. Zenless Zone Zero et Honkai: Star Rail y sont également superbes.</div></details>
-    <details><summary>Quel type de smartphone faut-il pour faire tourner les RPG récents ?</summary><div class="ans">Comptez un appareil récent milieu/haut de gamme : au moins 6 Go de RAM, un SoC type Snapdragon 7 Gen 3 / Apple A16 ou supérieur, et 35 Go d'espace libre pour les plus lourds.</div></details>
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Qu'est un RPG sur mobile exactement ?</h3>
+    <p>Un RPG (jeu de rôle) sur mobile est un jeu où vous incarnez un personnage que vous faites progresser au fil de quêtes. Vous montez en niveau, améliorez votre équipement et débloquez des compétences, le tout depuis votre smartphone, en solo ou en ligne.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Quel est le meilleur RPG mobile gratuit actuel ?</h3>
+    <p>Genshin Impact reste notre référence gratuite en juin 2026 : monde ouvert, histoire complète accessible sans payer et mises à jour régulières. Honkai: Star Rail le talonne pour les amateurs de tour par tour.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Peut-on jouer aux RPG mobiles avec une manette ?</h3>
+    <p>Oui. La majorité des gros RPG de ce top (Genshin Impact, Honkai: Star Rail, Diablo Immortal) gèrent les manettes Bluetooth, et le cross-save permet souvent de basculer vers la version PC ou console.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Quel est le RPG mobile le plus joué ?</h3>
+    <p>Pokémon GO et Genshin Impact figurent parmi les RPG mobiles les plus joués au monde, avec des dizaines de millions de joueurs actifs mensuels et des revenus records sur les stores.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Quel est le meilleur RPG Android ?</h3>
+    <p>Sur Android, Genshin Impact arrive en tête grâce à son optimisation et son monde ouvert. Pour le tour par tour, Honkai: Star Rail est l'alternative la plus aboutie.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Quel est le meilleur RPG iOS ?</h3>
+    <p>Sur iOS, Genshin Impact profite à plein des puces Apple Silicon pour tourner en 60 FPS. Zenless Zone Zero et Honkai: Star Rail y sont également superbes.</p>
+
+    <h3 class="faq-q"><span class="hlvl l3">H3</span>Quel type de smartphone faut-il pour faire tourner les RPG récents ?</h3>
+    <p>Comptez un appareil récent milieu/haut de gamme : au moins 6 Go de RAM, un SoC type Snapdragon 7 Gen 3 / Apple A16 ou supérieur, et 35 Go d'espace libre pour les plus lourds.</p>
   </div>
   <div class="brief schema"><span class="tag">Schéma — FAQPage (exemple à intégrer)</span>
     <pre style="white-space:pre-wrap;font-size:12px;background:#fff;border:1px solid #e0d6f5;border-radius:8px;padding:10px;margin-top:8px;overflow-x:auto">&lt;script type="application/ld+json"&gt;
@@ -879,6 +982,9 @@ footer.site .logo span{color:var(--orange)}
   <!-- ============================================================ -->
   <!-- BLOC AUTEUR COMPLET DE FIN (vrai bloc)                       -->
   <!-- ============================================================ -->
+  <div class="brief"><span class="tag">Brief — Bloc auteur (fin)</span>
+    <b>Format :</b> bloc bio. <b>Longueur :</b> 40 à 70 mots de bio à la 1re personne (passions, expertise, jeux de prédilection) + avatar + nom + rôle + liens réseaux. Alimente le schéma Person (voir exemple).
+  </div>
   <div class="author-full">
     <div class="ava">H</div>
     <div class="af-body">
@@ -911,10 +1017,11 @@ footer.site .logo span{color:var(--orange)}
   <!-- ============================================================ -->
   <!-- BLOC "NOUS SUIVRE" + NEWSLETTER (Follow us)                  -->
   <!-- ============================================================ -->
+  <div class="brief ui"><span class="tag">UI — Nous suivre + Newsletter</span> Bloc « Follow us » existant : réseaux du site + formulaire newsletter (cases News / Tops / Bons plans). 0 mot rédactionnel à fournir (composant réutilisable).</div>
   <div class="follow">
     <div class="fl-left">FOLLOW<br>US</div>
     <div class="fl-right">
-      <h3>Nous suivre</h3>
+      <h3><span class="hlvl l3">H3</span>Nous suivre</h3>
       <p>Suivez-nous sur nos réseaux sociaux pour rester à l'affût de l'actualité des jeux mobile où que vous soyez !</p>
       <div class="soc-row">
         <a href="https://discord.com/servers/mobigg-712977493405204520" title="Discord">D</a>
@@ -940,7 +1047,8 @@ footer.site .logo span{color:var(--orange)}
   <!-- ARTICLES SIMILAIRES (cartes comme le site)                  -->
   <!-- ============================================================ -->
   <div class="related">
-    <h2>Articles similaires</h2>
+    <h2><span class="hlvl l2">H2</span>Articles similaires</h2>
+    <div class="brief ui"><span class="tag">UI — Articles similaires</span> 4 à 6 cartes (vignette + titre + date). <b>Mettre en avant les articles les plus importants ou les plus performants du moment</b> (gros trafic / tendance), en priorité les tops connexes : MMORPG, multijoueur, cozy, survie, jeux du mois… Maillage interne. 0 mot rédactionnel à fournir.</div>
     <div class="related-grid">
       <a class="related-card" href="https://mobi.gg/fr/tops/meilleurs-cozy-games-android-ios/">
         <div class="thumb">TOP JEUX COZY MOBILE</div>
@@ -973,7 +1081,7 @@ footer.site .logo span{color:var(--orange)}
   <!-- COMMENTAIRES + RÉACTIONS EMOJI                               -->
   <!-- ============================================================ -->
   <div class="comments">
-    <h2>Commentaires</h2>
+    <h2><span class="hlvl l2">H2</span>Commentaires</h2>
     <p style="color:var(--muted);font-size:14px">Réagissez à cet article et partagez votre propre top RPG mobile !</p>
 
     <div class="reactions" id="reactions">
@@ -991,7 +1099,9 @@ footer.site .logo span{color:var(--orange)}
       <textarea placeholder="Votre commentaire…"></textarea>
       <button type="submit">Publier mon commentaire</button>
     </form>
-    <div class="brief"><span class="tag">Brief — Commentaires</span> Système de commentaires existant + réactions emoji <b>👍 ❤️ 😮 😡</b> avec compteur par réaction.</div>
+    <div class="brief"><span class="tag">Brief — Commentaires & réactions</span>
+      <b>Format :</b> module de commentaires existant (pseudo + email + message) <b>+</b> barre de réactions emoji 👍 ❤️ 😮 😡 avec compteur par réaction. <b>0 mot rédactionnel à fournir</b> (UI seulement).
+    </div>
   </div>
 
 </div>
